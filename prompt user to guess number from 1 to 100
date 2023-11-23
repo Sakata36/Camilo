@@ -1,0 +1,56 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Guess the number between 1 and 100.");
+
+        // Generate a random number between 1 and 100
+        Random random = new Random();
+        int targetNumber = random.Next(1, 101);
+
+        int userGuess = 0;
+        int attempts = 0;
+
+        do
+        {
+            Console.Write("Enter your guess: ");
+            string input = Console.ReadLine();
+
+            // Validate user input
+            if (int.TryParse(input, out userGuess))
+            {
+                // Check if the guess is within the valid range
+                if (userGuess < 1 || userGuess > 100)
+                {
+                    Console.WriteLine("Please enter a number between 1 and 100.");
+                    continue;
+                }
+
+                attempts++;
+
+                // Provide feedback to the user
+                if (userGuess < targetNumber)
+                {
+                    Console.WriteLine("Too low! Try again.");
+                }
+                else if (userGuess > targetNumber)
+                {
+                    Console.WriteLine("Too high! Try again.");
+                }
+                else
+                {
+                    Console.WriteLine($"Congratulations! You guessed the correct number {targetNumber} in {attempts} attempts.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+
+        } while (userGuess != targetNumber);
+
+        Console.ReadLine(); // Keep the console window open
+    }
+}
