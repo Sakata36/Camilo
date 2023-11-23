@@ -1,0 +1,25 @@
+Dictionary <string, string> quizgame = new Dictionary<string, string>(){
+    {"What is your name? ", "Christian"},
+    {"Ano ang salitang latin na ang ibig sabihin ay diskurso? ", "diskursus"}
+};
+
+foreach (var question in quizgame.Keys)
+{
+    Console.Write(question);
+
+    foreach (var answer in quizgame.Values)
+    {
+        string myanswer = Console.ReadLine();
+        if(myanswer == answer)
+        {
+            Console.WriteLine("You are correct!");
+        }
+        else
+        {
+            Console.WriteLine("You are wrong!");
+        }
+    }
+}
+
+
+
