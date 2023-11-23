@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Define the first term, common difference, and number of terms
+        int firstTerm = 2;
+        int commonDifference = 3;
+        int numberOfTerms = 5;
+
+        // Generate and print the arithmetic sequence
+        Console.WriteLine("Arithmetic Sequence:");
+        for (int i = 1; i <= numberOfTerms; i++)
+        {
+            int term = firstTerm + (i - 1) * commonDifference;
+            Console.Write(term + " ");
+        }
+
+        // Output:
+        // Arithmetic Sequence:
+        // 2 5 8 11 14
+    }
+}
